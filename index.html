@@ -428,7 +428,15 @@
     var somerset1900 = L.layerGroup([somersetholes, somerset],{
 		attribution: 'Historic OS maps © <a target = "_blank" href="https://maps.nls.uk/" title="National Library of Scotland">NLS</a>'
     });
-
+    var somersettithe = L.tileLayer.wms('https://dorsetgeologistsassociation.org/tithe/arcgis/services/base/1840s_tithe_128dpi_mk4/MapServer/WmsServer?', {
+        layers: '0',
+        transparent: true,
+        format: 'image/png',
+        opacity: 0.5,
+        info_format: 'text/html',
+        identify: true,
+        attribution: 'Tithe maps © <a target = "_blank" href="https://www.kypwest.org.uk/" title="Know Your Place">KYP</a>'
+    });
     var parish = L.geoJSON(somersetParish,{
         onEachFeature: function(feature, layer) {
             layer.bindPopup(
@@ -648,8 +656,9 @@
 		"<span title = 'OS Open Data Road'>OS Road</span>": road_overlay,
 		"<span title = 'Bing Maps OS Current'>OS Current</span>": os,
 		"<span title = 'OS 1:10,560 1950-1967'>OS 1950-1967</span>": os10k,
-		"<span title = 'OS Second Edition 25 inch ~1900'>OS Somerset ~1900</span>": somerset1900,		
-		"<span title = 'OS First Edition 25 inch ~1880'>OS Somerset ~1880</span>": somerset1880,
+		"<span title = 'OS Second Edition 25 inch ~1900'>OS 2nd Edition ~1900</span>": somerset1900,		
+		"<span title = 'OS First Edition 25 inch ~1880'>OS 1st Edition ~1880</span>": somerset1880,
+		"<span title = 'Tithe Maps ~1840'>Tithe Maps ~1840</span>": somersettithe,
 		"<span title = 'BGS Geology Bedrock'>Geology Bedrock</span>": geobed,
 		"<span title = 'BGS Geology Superficial'>Geology Surface</span>": geosup,
 		"<span title = 'BGS Geology Mass Movement'>Geology Landslip</span>": bgs50mass,
