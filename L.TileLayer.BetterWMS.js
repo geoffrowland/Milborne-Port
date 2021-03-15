@@ -151,7 +151,7 @@ L.TileLayer.BetterWMS = L.TileLayer.WMS.extend({
 		blseon2 = blseon2.split("\'")[0];
 		if (blseon1 == blseon2) {blseon = blseon1} else {blseon = blseon1 + ' to ' + blseon2};
 		if (blseon != '') {blseon = '<br/>Eon: ' + blseon};
-	    blscontent = blsname + blsdesc + blstime + blsage + blsepoch + blssubperiod + blsperiod + blsera + blseon + '<br/><br/>Locaton: ' + bngString + '<br/>Lat Lng: ';
+	    blscontent = blsname + blsdesc + blstime + blsage + blsepoch + blssubperiod + blsperiod + blsera + blseon + '<br/><br/>Locaton: ' + bngString + '<br/>';
     };
 
     slscontent = '';
