@@ -76,22 +76,33 @@
         imagerySet: 'Aerial',
         culture: 'en_GB',
         attribution: 'Bing Maps',
-	maxNativeZoom: 17
+	maxNativeZoom: 17,
+	maxZoom: 19
 	});
 	var aerialtransp = L.tileLayer.bing({
 		bingMapsKey: BING_KEY,
         imagerySet: 'Aerial',
         culture: 'en_GB',
         opacity: 0.5,
-	maxNativeZoom: 17
+	maxNativeZoom: 17,
+	maxZoom: 19
 	});
 	var aerialWithLabels = L.tileLayer.bing({
 		bingMapsKey: BING_KEY,
         imagerySet: 'AerialWithLabels',
-        culture: 'en_GB'
+        culture: 'en_GB',
+	maxNativeZoom: 17,
+	maxZoom: 19
 	});
-    var road = L.tileLayer(serviceUrl + '/Road_3857/{z}/{x}/{y}.png?key=' + apiKey, { maxNativeZoom:16, maxZoom: 18 });
-    var road_overlay = L.tileLayer(serviceUrl + '/Road_3857/{z}/{x}/{y}.png?key=' + apiKey, { opacity:0.5, maxNativeZoom:16, maxZoom: 18 });
+    var road = L.tileLayer(serviceUrl + '/Road_3857/{z}/{x}/{y}.png?key=' + apiKey, {
+	    maxNativeZoom:16,
+	    maxZoom: 19
+    });
+    var road_overlay = L.tileLayer(serviceUrl + '/Road_3857/{z}/{x}/{y}.png?key=' + apiKey, {
+	    opacity:0.5,
+	    maxNativeZoom:16,
+	    maxZoom: 19
+    });
 	
     var bgs50bed = L.tileLayer.betterWms('https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer', {
         layers: 'BGS.50k.Bedrock',
